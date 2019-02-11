@@ -19,6 +19,8 @@ public class main{
       //zone30
       if(vitesseConducteur>=vitesseMaxZone){
         System.out.print("infraction");
+      }else{
+        System.out.print("aucune infraction");
       }
 
 
@@ -26,6 +28,8 @@ public class main{
       //vitesse max de plus de 30
       if(vitesseConducteur>=vitesseMaxZone){
         System.out.print("infraction");
+      }else{
+        System.out.print("aucune infraction");
       }
     }
 
