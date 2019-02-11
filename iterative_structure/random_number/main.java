@@ -8,9 +8,9 @@ public class main{
     int guess=0;
     answer=sc.nextInt();
     if (answer>=1 && answer <=100) {
-      guess=sc.nextInt();
        while (guess!=answer) {
          System.out.println("tapez un nombre");
+         guess=sc.nextInt();
          attempts++;
          if (guess<answer) {
            System.out.println("plus grand");
