@@ -45,6 +45,19 @@ public class main{
       if(vitesseConducteur>=vitesseMaxZone){
         //on est en infraction
         difference=vitesseConducteur-vitesseMaxZone;
+        if (difference>=10 && difference<30){
+          amende=53+(difference*6);
+        }else if (difference>=30 && difference<40){
+          amende=53+(difference*6);
+          decheancePermis="Possible de 8 jours à 5ans";
+          retraitPermis="possible";
+        }else if (difference>=40) {
+          amende=53+(difference*6);
+          retraitPermis="possible";
+          decheancePermis="possible";
+        }else {
+          amende=53;
+        }
       }else{
         System.out.print("aucune infraction");
       }
