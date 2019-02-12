@@ -14,7 +14,7 @@ public class main{
     System.out.println("le nombre à deviner");
     answer=sc.nextInt();
     System.out.println("votre nom");
-    name2=sc.nextLine();
+    name2=sc.next();
     if (answer>=1 && answer <=100) {
        while (guess!=answer&&attempts<MAX) {
          System.out.println("tapez un nombre");
