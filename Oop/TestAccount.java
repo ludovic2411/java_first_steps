@@ -29,7 +29,7 @@ class Account{
       System.out.println("The account"+id+" made by"+name+" is provided with "+amount+" euros");
     }
       Boolean isRegistered(){
-      if (id==0&&name.equals(null)) {
+      if (id==0&&name==null) {
         return false;
       }else {
         return true;
@@ -59,22 +59,38 @@ class TestAccount{
           account.display();
           break;
         case "add":
-          System.out.println("amount");
-          money=sc.nextDouble();
-          account.deposit(money);
-          account.checkAmount();
+          if (account.isRegistered()) {
+            System.out.println("amount");
+            money=sc.nextDouble();
+            account.deposit(money);
+            account.checkAmount();
+          }else{
+            System.out.println("You must create an account before adding money");
+          }
           break;
         case "withdraw":
-          System.out.println("amount");
-          money=sc.nextDouble();
-          account.withdraw(money);
-          account.checkAmount();
+          if (account.isRegistered()) {
+            System.out.println("amount");
+            money=sc.nextDouble();
+            account.withdraw(money);
+            account.checkAmount();
+          }else{
+            System.out.println("You must create an account before withdrawing money");
+          }
           break;
         case "check":
-          account.checkAmount();
+          if (account.isRegistered()) {
+            account.checkAmount();
+          }else {
+            System.out.println("You must create an account before checking money");
+          }
           break;
         case "display":
-          account.display();
+          if (account.isRegistered()) {
+            account.display();
+          }else{
+            System.out.println("You haven't created an account yet");
+          }
           break;
         default:
           System.out.println("enter a valide action: create,add,withdraw,display,check");
