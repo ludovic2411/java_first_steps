@@ -28,6 +28,13 @@ class Account{
     void display(){
       System.out.println("The account"+id+" made by"+name+" is provided with "+amount+" euros");
     }
+      Boolean isRegistered(){
+      if (id==0&&name.equals(null)) {
+        return false;
+      }else {
+        return true;
+      }
+    }
 
   }
 
