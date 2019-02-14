@@ -46,7 +46,7 @@ class TestAccount{
           System.out.println("account number");
           int id=sc.nextInt();
           System.out.println("name");
-          String name=sc.nextLine();
+          String name=sc.next();
           money=0.00;
           account.insert(id,name,money);
           account.display();
@@ -58,6 +58,7 @@ class TestAccount{
           account.checkAmount();
           break;
         case "withdraw":
+          System.out.println("amount");
           money=sc.nextDouble();
           account.withdraw(money);
           account.checkAmount();
