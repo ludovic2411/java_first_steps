@@ -47,7 +47,7 @@ class TestAccount{
 
     while (!choice.equals("stop")) {
       System.out.println("which action do you want to perform?");
-      choice=sc.nextLine();
+      choice=sc.nextLine().trim();
       switch (choice) {
         case "create":
           System.out.println("account number");
