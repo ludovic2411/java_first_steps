@@ -22,8 +22,8 @@ class Account{
       amount-=amt;
     }
   }
-    void checkAmount(Double amt){
-      System.out.println("You have an amount of"+amt+" on your account");
+    void checkAmount(){
+      System.out.println("You have an amount of"+amount+" on your account");
     }
     void display(){
       System.out.println("The account"+id+" made by"+name+" is provided with "+amount+" euros");
@@ -43,19 +43,30 @@ class TestAccount{
       choice=sc.nextLine();
       switch (choice) {
         case "create":
-          System.out.println("create");
+          System.out.println("account number");
+          int id=sc.nextInt();
+          System.out.println("name");
+          String name=sc.nextLine();
+          money=0.00;
+          account.insert(id,name,money);
+          account.display();
           break;
         case "add":
-        System.out.println("add");
+          System.out.println("amount");
+          money=sc.nextDouble();
+          account.deposit(money);
+          account.checkAmount();
           break;
         case "withdraw":
-        System.out.println("withdraw");
+          money=sc.nextDouble();
+          account.withdraw(money);
+          account.checkAmount();
           break;
         case "check":
-          System.out.println("check");
+          account.checkAmount();
           break;
         case "display":
-        System.out.println("display");
+          account.display();
           break;
         default:
           System.out.println("enter a valide action: create,add,withdraw,display,check");
