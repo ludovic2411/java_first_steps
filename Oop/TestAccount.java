@@ -30,3 +30,37 @@ class Account{
     }
 
   }
+
+class TestAccount{
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    String choice;
+    Account account=new Account();
+    Double money;
+
+    while (!choice.equals("stop")) {
+      System.out.println("which action do you want to perform?");
+      choice=sc.nextLine();
+      switch (choice) {
+        case "create":
+          System.out.println("create");
+          break;
+        case "add":
+        System.out.println("add");
+          break;
+        case "withdraw":
+        System.out.println("withdraw");
+          break;
+        case "check":
+          System.out.println("check");
+          break;
+        case "display":
+        System.out.println("display");
+          break;
+        default:
+          System.out.println("enter a valide action: create,add,withdraw,display,check");
+      }
+    }
+
+  }
+}
