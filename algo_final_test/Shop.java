@@ -10,10 +10,10 @@ public class Shop{
     }
   }
 
-  void display(String productName[],Double productList[][],double recetteTotale){
-    for (int i=1;i<22 ;i++ ) {
-      if (productList[i][0]>0) {
-        System.out.println("Vous avez acheté "+productList[i][0]+" "+productName[i]+" vous devez payer "+recetteTotale);
+  static void display(String productName[],Double productList[][],double recetteTotale){
+    for (int i=0;i<21 ;i++ ) {
+      if (productList[i][1]>0) {
+        System.out.println("Vous avez acheté "+productList[i][1]+" "+productName[i]+" vous devez payer "+recetteTotale);
       }
     }
   }
@@ -77,7 +77,7 @@ public class Shop{
                     if (i==choix) {
                       prixTotal+=productList[i][0];
                       recetteJour+=productList[i][0];
-                      productList[i][0]+=1.00;
+                      productList[i][1]+=1.00;
                       System.out.println("produit ajouté");
                       break;
                     }
@@ -90,7 +90,12 @@ public class Shop{
               }
               break;
             case "reset":
-              System.out.println("reset");
+                display(productName,productList,prixTotal);
+                prixTotal=0.00;
+                for (int i=0;i<21 ;i++ ) {
+                  productList[i][1]=0.00;
+                }
+                System.out.println("client suivant");
               break;
               default:
                 System.out.println("action non valide");
