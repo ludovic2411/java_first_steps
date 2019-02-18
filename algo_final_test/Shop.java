@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Shop{
 
-  Boolean inputValidator(int productId){
+  static Boolean inputValidator(int productId){
     if (productId>=1&&productId<22) {
       return true;
     }else {
@@ -20,7 +20,10 @@ public class Shop{
 
   public static void main(String[] args) {
     int nbClients=0;
+    //prix pour chaque client
     Double prixTotal=0.00;
+    // recette du jour
+    Double recetteJour=0.00;
     String action="";
     Double productList[][]=new Double[21][21];
     Scanner sc=new Scanner(System.in);
@@ -52,15 +55,50 @@ public class Shop{
      productList[19][0]=6.96;
      productList[20][0]=5.96;
 
-    for (int i=0;i<22 ;i++ ) {
+    for (int i=0;i<21 ;i++ ) {
       productList[i][1]=0.00;
     }
 
     while (!action.equals("stop")) {
-      System.out.println("votre action?");
+      System.out.println("votre action?=enter pour commencer ou stop pour arrêter");
       action=sc.nextLine();
-      while(!action.equals("reset")){
-
+      if (action.equals("enter")) {
+        nbClients+=1;
+        while(!action.equals("reset")){
+          System.out.println("votre action?");
+          action=sc.next();
+          switch (action) {
+            case "add":
+              System.out.println("entrez l'id du produit");
+              try {
+                int choix=sc.nextInt();
+                if (inputValidator(choix)) {
+                  for (int i=1;i<21 ;i++ ) {
+                    if (i==choix) {
+                      prixTotal+=productList[i][0];
+                      recetteJour+=productList[i][0];
+                      productList[i][0]+=1.00;
+                      System.out.println("produit ajouté");
+                      break;
+                    }
+                  }
+                }else{
+                  System.out.println("pas d'article avec l'id "+choix);
+                }
+              } catch(Exception e) {
+                System.out.println("entrez un id valide");
+              }
+              break;
+            case "reset":
+              System.out.println("reset");
+              break;
+              default:
+                System.out.println("action non valide");
+                break;
+          }
+        }
+      } else if (action.equals("stop")) {
+        System.out.println("fin de la journée");
       }
     }
   }
