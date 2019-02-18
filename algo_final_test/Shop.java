@@ -5,7 +5,7 @@ public class Shop{
     int nbClients=0;
     Double prixTotal=0.00;
     String action;
-    Double productList[][]=new Double[20][20];
+    Double productList[][]=new Double[21][21];
     //premier indice:prix second indice: nombre de fois acheté
     String productName[]={"","banane","kiwi","chicons","aubergines","tomates",
     "pâtes","fraises","café","coca","thé",
@@ -34,7 +34,7 @@ public class Shop{
      productList[19][0]=6.96;
      productList[20][0]=5.96;
 
-    for (int i=0;i<21 ;i++ ) {
+    for (int i=0;i<22 ;i++ ) {
       productList[i][1]=0.00;
     }
   }
