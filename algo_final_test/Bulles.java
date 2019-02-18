@@ -7,7 +7,7 @@ public class Bulles{
 
     while (modif) {
       modif=false;
-      for (int i=0;i<longTab ;i++ ) {
+      for (int i=0;i<longTab-1 ;i++ ) {
         if (tab[i]>tab[i+1]) {
           int temp=tab[i];
           tab[i]=tab[i+1];
