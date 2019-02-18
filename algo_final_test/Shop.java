@@ -13,9 +13,10 @@ public class Shop{
   static void display(String productName[],Double productList[][],double recetteTotale){
     for (int i=0;i<21 ;i++ ) {
       if (productList[i][1]>0) {
-        System.out.println("Vous avez acheté "+productList[i][1]+" "+productName[i]+" vous devez payer "+recetteTotale);
+        System.out.println("Vous avez acheté "+productList[i][1]+" * "+productName[i]+" : "+productList[i][0]);
       }
     }
+    System.out.println("Le montant total est de "+recetteTotale+" euros");
   }
 
   public static void main(String[] args) {
@@ -60,11 +61,13 @@ public class Shop{
     }
 
     while (!action.equals("stop")) {
+      //boucle de la journée de travail
       System.out.println("votre action?=enter pour commencer ou stop pour arrêter");
       action=sc.nextLine();
       if (action.equals("enter")) {
         nbClients+=1;
         while(!action.equals("reset")){
+          //boucle pour chaque client
           System.out.println("votre action?");
           action=sc.next();
           switch (action) {
@@ -75,11 +78,19 @@ public class Shop{
                 if (inputValidator(choix)) {
                   for (int i=1;i<21 ;i++ ) {
                     if (i==choix) {
-                      prixTotal+=productList[i][0];
-                      recetteJour+=productList[i][0];
-                      productList[i][1]+=1.00;
-                      System.out.println("produit ajouté");
-                      break;
+                      System.out.println("confirmer l'achat de "+ productName[i]+" avec l'id "+i+" pour "+productList[i][0]+" euros?");
+                      System.out.println("y/n");
+                      String confirm=sc.next();
+                      if (confirm.equals("y")) {
+                        prixTotal+=productList[i][0];
+                        recetteJour+=productList[i][0];
+                        productList[i][1]+=1.00;
+                        System.out.println("produit ajouté");
+                        break;
+                      }else{
+                        System.out.println("commande annulée");
+                        break;
+                      }
                     }
                   }
                 }else{
@@ -103,6 +114,7 @@ public class Shop{
           }
         }
       } else if (action.equals("stop")) {
+        System.out.println("Reçu "+nbClients+" clients. Recette du jour: "+recetteJour+" euros");
         System.out.println("fin de la journée");
       }
     }
