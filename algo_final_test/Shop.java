@@ -25,6 +25,8 @@ public class Shop{
     Double prixTotal=0.00;
     // recette du jour
     Double recetteJour=0.00;
+    Double rendu;
+    Double argentClient;
     String action="";
     Double productList[][]=new Double[21][21];
     Scanner sc=new Scanner(System.in);
@@ -98,10 +100,21 @@ public class Shop{
                 }
               } catch(Exception e) {
                 System.out.println("entrez un id valide");
+                sc.nextLine();
               }
               break;
             case "reset":
                 display(productName,productList,prixTotal);
+                System.out.println("Le client a payé: ");
+                argentClient=sc.nextDouble();
+                rendu=argentClient-prixTotal;
+                if (rendu>0) {
+                  System.out.println(rendu+" doit être rendu au client");
+                }else if (rendu<0) {
+                  System.out.println(("le client doit encore payer "+Math.abs(rendu)+" euros"));
+                }else{
+                  System.out.println("Le compte est juste");
+                }
                 prixTotal=0.00;
                 for (int i=0;i<21 ;i++ ) {
                   productList[i][1]=0.00;
