@@ -21,7 +21,22 @@ public class Main{
       System.out.println("entrez enter pour commencer la journée et stop pour la terminer");
       action=input.next();
       if (action.equals("enter")) {
-        System.out.println("boucle1");
+        while (!action.equals("reset")) {
+          System.out.println("entrez add pour ajouter un produit et reset pour passer au client suivant");
+          action=input.next();
+          switch (action) {
+            case "add":
+              manager.addProduct(productList);
+              manager.display(productList);
+            break;
+            case "reset":
+              System.out.println("exit boucle 2");
+            break;
+            default:
+              System.out.println("entrez une commande invalide: add ou reset");
+            break;
+          }
+        }
       }else if (action.equals("stop")) {
         System.out.println("stop");
       }else{

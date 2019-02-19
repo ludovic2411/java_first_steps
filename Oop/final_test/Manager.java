@@ -39,7 +39,7 @@ class Manager{
           if (i==id) {
             System.out.println("acheter "+array[i].name+" pour "+array[i].price+" ?");
             System.out.println("y/n pour confirmer ou annuler");
-            String confirm=sc.nextLine();
+            String confirm=sc.next();
             if (confirm.equals("y")) {
               prixTotal+=array[i].price;
               recetteJour+=prixTotal;
