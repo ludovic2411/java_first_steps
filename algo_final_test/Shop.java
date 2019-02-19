@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Shop{
 
   static Boolean inputValidator(int productId){
-    if (productId>=1&&productId<22) {
+    if (productId>=1&&productId<21) {
       return true;
     }else {
       return false;
@@ -63,13 +63,13 @@ public class Shop{
     while (!action.equals("stop")) {
       //boucle de la journée de travail
       System.out.println("votre action?=enter pour commencer ou stop pour arrêter");
-      action=sc.nextLine();
+      action=sc.next();
       if (action.equals("enter")) {
         nbClients+=1;
         while(!action.equals("reset")){
-          //boucle pour chaque client
-          System.out.println("votre action?");
+          System.out.println("votre action? : add pour ajouter un produit et reset pour afficher la commande du client");
           action=sc.next();
+          //boucle pour chaque client
           switch (action) {
             case "add":
               System.out.println("entrez l'id du produit");
