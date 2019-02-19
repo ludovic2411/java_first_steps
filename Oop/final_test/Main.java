@@ -18,19 +18,20 @@ public class Main{
 
     productList=manager.fillList(productList,productName,priceList);
     while (!action.equals("stop")) {
-      System.out.println("entrez enter pour commencer la journée et stop pour la terminer");
+      System.out.println("entrez enter pour enregistrer un nouveau client la journée et stop pour la terminer");
       action=input.next();
       if (action.equals("enter")) {
+        manager.nbClient++;
         while (!action.equals("reset")) {
           System.out.println("entrez add pour ajouter un produit et reset pour passer au client suivant");
           action=input.next();
           switch (action) {
             case "add":
               manager.addProduct(productList);
-              manager.display(productList);
             break;
             case "reset":
-              System.out.println("exit boucle 2");
+            manager.display(productList);
+            manager.clean(productList);
             break;
             default:
               System.out.println("entrez une commande invalide: add ou reset");
@@ -38,7 +39,7 @@ public class Main{
           }
         }
       }else if (action.equals("stop")) {
-        System.out.println("stop");
+        manager.endDay();
       }else{
         System.out.println("action invalide");
       }

@@ -41,6 +41,7 @@ class Manager{
             System.out.println("y/n pour confirmer ou annuler");
             String confirm=sc.next();
             if (confirm.equals("y")) {
+              array[i].nbAchat++;
               prixTotal+=array[i].price;
               recetteJour+=prixTotal;
               System.out.println("produit ajouté");
