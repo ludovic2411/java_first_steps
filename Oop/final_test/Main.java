@@ -14,5 +14,20 @@ public class Main{
     11.10,8.99,4.00,0.70,0.55,7.50};
     final int RANGE=productName.length;
     Product productList []=new Product[RANGE];
+    Manager manager=new Manager(0.00,0.00,0.00,0);
+
+    productList=manager.fillList(productList,productName,priceList);
+    while (!action.equals("stop")) {
+      System.out.println("entrez enter pour commencer la journée et stop pour la terminer");
+      action=input.next();
+      if (action.equals("enter")) {
+        System.out.println("boucle1");
+      }else if (action.equals("stop")) {
+        System.out.println("stop");
+      }else{
+        System.out.println("action invalide");
+      }
+    }
+
   }
 }

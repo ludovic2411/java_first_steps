@@ -6,6 +6,13 @@ class Manager{
   Double recetteJour;
   int nbClient;
 
+  Manager(Double r, Double pt, Double rj, int nc){
+    rendu=r;
+    prixTotal=pt;
+    recetteJour=rj;
+    nbClient=nc;
+  }
+
    Product [] fillList (Product [] array, String [] nameList,Double [] priceList){
     for (int i=0;i<array.length ;i++ ) {
       array[i]=new Product(i,nameList[i],priceList[i],0);
