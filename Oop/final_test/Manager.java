@@ -60,6 +60,10 @@ class Manager{
     }
   }
 
+  void addClient(){
+    nbClient++;
+  }
+
   void display(Product [] array){
     for (Product key :array ) {
       if (key.nbAchat>0) {
@@ -78,5 +82,18 @@ class Manager{
   }
   void endDay(){
     System.out.println(nbClient+" clients reçus aujourd'hui"+" recette totale: "+recetteJour);
+  }
+  void giveMoney(){
+    System.out.println("Somme donnée par le client");
+    Scanner sc=new Scanner(System.in);
+    Double clientMoney=sc.nextDouble();
+    rendu=clientMoney-prixTotal;
+    if (rendu>0) {
+      System.out.println("Rendre "+rendu+" euros au client");
+    }else if (rendu<0) {
+      System.out.println("Le client doit encore donner "+Math.abs(rendu)+" euros");
+    }else {
+      System.out.println("le compte est juste");
+    }
   }
 }

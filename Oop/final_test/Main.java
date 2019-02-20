@@ -21,7 +21,7 @@ public class Main{
       System.out.println("entrez enter pour enregistrer un nouveau client la journée et stop pour la terminer");
       action=input.next();
       if (action.equals("enter")) {
-        manager.nbClient++;
+        manager.addClient();
         while (!action.equals("reset")) {
           System.out.println("entrez add pour ajouter un produit et reset pour passer au client suivant");
           action=input.next();
@@ -31,6 +31,7 @@ public class Main{
             break;
             case "reset":
             manager.display(productList);
+            manager.giveMoney();
             manager.clean(productList);
             break;
             default:
