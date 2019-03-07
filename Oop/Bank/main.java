@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class main{
   public static void main(String[] args) {
-    Bank banque=new Bank();
-    banque.nom="Dexia";
+    Bank banque=new Bank("dexia");
     String action="";
     while(!action.equals("stop")){
     Scanner input=new Scanner(System.in);
