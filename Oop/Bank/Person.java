@@ -12,5 +12,10 @@ public class Person{
     this.dateNaissance=dateNaissance;
   }
 
+  @Override
+  public String toString(){
+    return String.format(" Nom de la personne: %s",this.nom,this.prenom);
+  }
+
 
 }

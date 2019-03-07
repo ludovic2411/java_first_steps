@@ -17,6 +17,8 @@ public class main{
       break;
       case "display":
         banque.display();
+        String banqueNom=banque.toString();
+        System.out.println(banqueNom);
       break;
       default:
         System.out.println("oups");

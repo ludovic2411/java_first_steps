@@ -1,6 +1,5 @@
-import java.util.Hashtable;
-import java.util.Scanner;
 import java.time.LocalDate;
+import java.util.*;
 
 
 
@@ -24,6 +23,7 @@ public class Bank{
     System.out.println("date de naissance: yyyy-mm-dd");
     String date=sc.next();
     Person newTitulaire=new Person(nom,prenom,LocalDate.parse(date));
+    String personCreated=newTitulaire.toString();
     //création du compte
     System.out.println("numero du compte");
     String accountNumber=sc.next();
@@ -42,6 +42,13 @@ public class Bank{
   }
 
   public void display(){
-    System.out.println(comptes);
+    for (Map.Entry key :this.comptes.entrySet() ) {
+      System.out.println(key.getKey()+" "+key.getValue());
+    }
+  }
+
+  @Override
+  public String toString(){
+    return String.format("Banque %s",this.nom);
   }
 }
