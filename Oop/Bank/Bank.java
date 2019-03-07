@@ -23,13 +23,12 @@ public class Bank{
     System.out.println("date de naissance: yyyy-mm-dd");
     String date=sc.next();
     Person newTitulaire=new Person(nom,prenom,LocalDate.parse(date));
-    String personCreated=newTitulaire.toString();
     //création du compte
     System.out.println("numero du compte");
     String accountNumber=sc.next();
     Double solde=0.00;
     Account newAccount=new Account(accountNumber,solde,newTitulaire);
-    comptes.put(newAccount.numero,newAccount);
+    comptes.putIfAbsent(newAccount.numero,newAccount);
     System.out.println("enregistrement terminé");
 
   }

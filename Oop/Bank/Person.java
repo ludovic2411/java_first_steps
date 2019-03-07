@@ -1,9 +1,9 @@
 import java.time.LocalDate;
 
 public class Person{
-  String nom;
-  String prenom;
-  LocalDate dateNaissance;
+  private String nom;
+  private String prenom;
+  private LocalDate dateNaissance;
 
   public Person(String nom, String prenom, LocalDate dateNaissance){
     System.out.println("construct");
@@ -15,6 +15,10 @@ public class Person{
   @Override
   public String toString(){
     return String.format(" Nom de la personne: %s",this.nom,this.prenom);
+  }
+
+  public void getName(){
+    System.out.println(this.nom);
   }
 
 
