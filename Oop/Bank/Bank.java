@@ -27,7 +27,7 @@ public class Bank{
     System.out.println("numero du compte");
     String accountNumber=sc.next();
     Double solde=0.00;
-    Account newAccount=new Account(accountNumber,solde,newTitulaire);
+    Account newAccount=new Epargne(accountNumber,solde,newTitulaire);
     comptes.putIfAbsent(newAccount.numero,newAccount);
     System.out.println("enregistrement terminé");
 
