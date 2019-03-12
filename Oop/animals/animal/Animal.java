@@ -4,8 +4,10 @@ public class Animal{
   private String name;
   private int age;
   private Boolean canSwim;
-  public Animal(){
-    System.out.println("animal is born");
+  public Animal(String name,int age,Boolean canSwim){
+    this.name=name;
+    this.age=age;
+    this.canSwim=canSwim;
   }
   public String getName(){
     return this.name;
@@ -13,7 +15,7 @@ public class Animal{
   public int getAge(){
     return this.age;
   }
-  public Boolean canSwim(Animal animal){
+  public Boolean canSwim(){
     if (this.canSwim) {
       return true;
     }else {
