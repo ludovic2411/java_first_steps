@@ -7,6 +7,7 @@ public class Bank{
   String nom;
   Hashtable <String, Account> comptes;
   Scanner sc=new Scanner(System.in);
+  String typeCompte;
 
   public Bank(String nom){
     this.nom=nom;
@@ -27,9 +28,21 @@ public class Bank{
     System.out.println("numero du compte");
     String accountNumber=sc.next();
     Double solde=0.00;
-    Account newAccount=new Epargne(accountNumber,solde,newTitulaire);
-    comptes.putIfAbsent(newAccount.numero,newAccount);
-    System.out.println("enregistrement terminé");
+    //compte épargne ou compte courant
+    System.out.println("type de compte");
+    typeCompte=sc.next();
+    if (typeCompte.equals("epargne")) {
+      Account newAccount=new Epargne(accountNumber,solde,newTitulaire);
+      comptes.putIfAbsent(newAccount.getNumero(),newAccount);
+      System.out.println("enregistrement terminé");
+    }else if (typeCompte.equals("courant")) {
+      //fixe le crédit disponible
+      System.out.println("fixer le crédit possible pour ce compte");
+      double credit=sc.nextDouble();
+      Account newAccount=new Courant(accountNumber,solde,newTitulaire,credit);
+      comptes.putIfAbsent(newAccount.getNumero(),newAccount);
+      System.out.println("enregistrement terminé");
+    }
 
   }
 

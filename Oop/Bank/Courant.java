@@ -1,3 +1,4 @@
+import java.math.*;
 
 public class Courant extends Account{
   private double credit;
@@ -14,7 +15,9 @@ public class Courant extends Account{
 
 public void retrait(double montant) {
   double sd=this.getSolde();
-  if (sd>montant) {
+  double difference=sd-montant;
+  difference=Math.abs(difference);
+  if (sd>montant && this.credit>difference) {
     sd-=montant;
     System.out.println(montant+" euros ont été retirés");
     this.setSolde(sd);
