@@ -23,13 +23,20 @@ public class main{
       case "select":
         System.out.println("action sur le compte?: add ou retrieve ou interest");
         String subAction=input.next();
-        if (subAction.equals("add")) {
-          banque.addMoney();
-        }else if (subAction.equals("retrieve")) {
-        banque.retrieveMoney();
-      }else if (subAction.equals("interest")) {
-        banque.showInterestRate();
-      }
+        switch (subAction) {
+          case "add":
+            banque.addMoney();
+          break;
+          case "retrieve":
+            banque.retrieveMoney();
+          break;
+          case "interest":
+            banque.showInterestRate();
+          break;
+          default:
+            System.out.println("unknown command");
+          break;
+        }
       break;
       default:
         System.out.println("oups");
