@@ -3,11 +3,13 @@ import java.util.*;
 
 public class Epargne extends Account{
 
-  Double interet;
+  double interet;
 
-  public Epargne(String numero,Double solde,Person titulaire){
-    this.numero=numero;
-    this.solde=solde;
-    this.titulaire=titulaire;
+  public Epargne(String numero,double solde,Person titulaire){
+    super(numero,solde, titulaire);
+  }
+
+  public void retrait(double montant){
+    System.out.println("U can't retrieve money with this account");
   }
 }

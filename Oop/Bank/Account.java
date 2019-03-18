@@ -13,11 +13,18 @@ public abstract class Account{
     this.solde+=montant;
   }
 
-  double getSolde(){
+  public double getSolde(){
     return this.solde;
   }
 
-  public abstract void retrait();
+  public String getNumero(){
+    return this.numero;
+  }
 
+  public double setSolde(double montant){
+    return this.solde=montant;
+  }
+
+  public abstract void retrait(double montant);
 
 }

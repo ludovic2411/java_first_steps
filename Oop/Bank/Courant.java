@@ -10,14 +10,12 @@ public class Courant extends Account{
   public double getCredit(){
     return this.credit;
   }
- 
 
-  
-
-@Override
-public void retrait() {
-	// TODO Auto-generated method stub
-	
+public void retrait(double montant) {
+  double sd=this.getSolde();
+  sd-=montant;
+  System.out.println(montant+" euros ont été retirés");
+  this.setSolde(sd);
 	}
 
 }
