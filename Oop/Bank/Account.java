@@ -28,4 +28,12 @@ public abstract class Account{
   public abstract void retrait(double montant);
   public abstract void showInteret();
 
+  public void showDetails(){
+    System.out.println("nom: "+titulaire.getName());
+    System.out.println("prenom "+titulaire.getPrenom());
+    System.out.println("date de naissance "+titulaire.getDateNaissance());
+    System.out.println("numero de compte "+this.getNumero());
+    System.out.println("solde actuel du compte "+this.getSolde());
+  }
+
 }

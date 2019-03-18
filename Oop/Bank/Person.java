@@ -17,8 +17,16 @@ public class Person{
     return String.format(" Nom de la personne: %s",this.nom,this.prenom);
   }
 
-  public void getName(){
-    System.out.println(this.nom);
+  public String getName(){
+    return this.nom;
+  }
+
+  public String getPrenom(){
+      return this.prenom;
+  }
+
+  public LocalDate getDateNaissance(){
+    return this.dateNaissance;
   }
 
 
