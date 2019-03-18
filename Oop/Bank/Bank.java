@@ -93,6 +93,11 @@ public class Bank{
     selectedAccount.showInteret();
   }
 
+  public void showDetails(){
+    Account selectedAccount=this.selectAccount();
+    selectedAccount.showDetails();
+  }
+
   @Override
   public String toString(){
     return String.format("Banque %s",this.nom);
