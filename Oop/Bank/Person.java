@@ -6,7 +6,7 @@ public class Person{
   private LocalDate dateNaissance;
 
   public Person(String nom, String prenom, LocalDate dateNaissance){
-    System.out.println("construct");
+    System.out.println("personne enregistrée");
     this.nom=nom;
     this.prenom=prenom;
     this.dateNaissance=dateNaissance;
