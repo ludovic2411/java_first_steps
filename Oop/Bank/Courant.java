@@ -17,7 +17,7 @@ public void retrait(double montant) {
   double sd=this.getSolde();
   double difference=sd-montant;
   difference=Math.abs(difference);
-  if (sd>montant && this.credit>difference) {
+  if (sd>montant || this.credit>difference) {
     sd-=montant;
     System.out.println(montant+" euros ont été retirés");
     this.setSolde(sd);
@@ -25,5 +25,9 @@ public void retrait(double montant) {
     System.out.println("you don't have enough money");
     }
 	}
+
+  public void showInteret(){
+    System.out.println("this account doesn't have any interest rate");
+  }
 
 }

@@ -3,10 +3,11 @@ import java.util.*;
 
 public class Epargne extends Account{
 
-  double interet;
+  private double interet;
 
-  public Epargne(String numero,double solde,Person titulaire){
+  public Epargne(String numero,double solde,Person titulaire,double interet){
     super(numero,solde, titulaire);
+    this.interet=interet/100;
     System.out.println("compte Epargne crée");
   }
 
@@ -15,12 +16,11 @@ public class Epargne extends Account{
   }
 
   public void showInteret(){
-    interet=0.0025;
     double sd=this.getSolde();
     double prevSd=this.getSolde();
     sd*=interet;
     prevSd+=sd;
     System.out.println("Vous gagnerez "+
-    sd+"d'intérêts par an et aurez "+prevSd+"sur votre compte épargne");
+    sd+" euros d'intérêts par an et aurez "+prevSd+" euro sur votre compte épargne");
   }
 }

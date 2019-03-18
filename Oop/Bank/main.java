@@ -20,6 +20,17 @@ public class main{
         String banqueNom=banque.toString();
         System.out.println(banqueNom);
       break;
+      case "select":
+        System.out.println("action sur le compte?: add ou retrieve ou interest");
+        String subAction=input.next();
+        if (subAction.equals("add")) {
+          banque.addMoney();
+        }else if (subAction.equals("retrieve")) {
+        banque.retrieveMoney();
+      }else if (subAction.equals("interest")) {
+        banque.showInterestRate();
+      }
+      break;
       default:
         System.out.println("oups");
       break;

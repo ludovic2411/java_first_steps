@@ -32,7 +32,9 @@ public class Bank{
     System.out.println("type de compte");
     typeCompte=sc.next();
     if (typeCompte.equals("epargne")) {
-      Account newAccount=new Epargne(accountNumber,solde,newTitulaire);
+      System.out.println("fixer un taux d'intérêt");
+      double interet=sc.nextDouble();
+      Account newAccount=new Epargne(accountNumber,solde,newTitulaire,interet);
       comptes.putIfAbsent(newAccount.getNumero(),newAccount);
       System.out.println("enregistrement terminé");
     }else if (typeCompte.equals("courant")) {
@@ -46,6 +48,12 @@ public class Bank{
 
   }
 
+  public Account selectAccount(){
+    System.out.println("entrez le numéro du compte");
+    String numCompte=sc.next();
+    return this.comptes.get(numCompte);
+  }
+
   public void deleteAccount(){
     String id;
     System.out.println("entrez l'id du compte à supprimer");
@@ -53,10 +61,36 @@ public class Bank{
     comptes.remove(id);
   }
 
+  public void addMoney(){
+    //selectionne le comptes
+    Account selectedAccount=this.selectAccount();
+    System.out.println(selectedAccount.getNumero());
+    //le montant à déposer
+    System.out.println("montant à déposer");
+    double montant=sc.nextDouble();
+    selectedAccount.depot(montant);
+    System.out.println("Vous avez maintenant "+selectedAccount.getSolde()+" sur votre compte");
+
+  }
+
+  public void retrieveMoney(){
+    Account selectedAccount=this.selectAccount();
+    //le montant à déposer
+    System.out.println("montant à retirer");
+    double montant=sc.nextDouble();
+    selectedAccount.retrait(montant);
+    System.out.println("Vous avez maintenant "+selectedAccount.getSolde()+" sur votre compte");
+  }
+
   public void display(){
     for (Map.Entry key :this.comptes.entrySet() ) {
       System.out.println(key.getKey()+" "+key.getValue());
     }
+  }
+
+  public void showInterestRate(){
+    Account selectedAccount=this.selectAccount();
+    selectedAccount.showInteret();
   }
 
   @Override

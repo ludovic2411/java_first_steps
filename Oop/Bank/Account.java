@@ -7,7 +7,6 @@ public abstract class Account{
     this.numero=numero;
     this.solde=solde;
     this.titulaire=titulaire;
-    System.out.println("compte crée");
   }
 
   public void depot(double montant){
@@ -27,5 +26,6 @@ public abstract class Account{
   }
 
   public abstract void retrait(double montant);
+  public abstract void showInteret();
 
 }
