@@ -53,6 +53,7 @@ public class Magasin{
         i++;
         if (nomProduit.equals(articles[i].getLibelle())) {
           System.out.println("Vous avez pris du "+articles[i].getLibelle());
+          System.out.println("qtité "+articles[i].getStock());
         }
       }
     }
