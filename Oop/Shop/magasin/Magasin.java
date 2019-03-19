@@ -17,4 +17,16 @@ public class Magasin{
       this.clientList=new Hashtable <String,Client>();
       this.articles=new HashSet();
     }
+
+    public void displayClients(){
+      for (Map.Entry key:this.clientList.entrySet() ) {
+        System.out.println(key.getKey()+"  "+key.getValue());
+      }
+    }
+    public void displayArticles(){
+      Iterator <Produit> i=articles.iterator();
+      while (i.hasNext()) {
+        System.out.println(i.next());
+      }
+    }
 }
