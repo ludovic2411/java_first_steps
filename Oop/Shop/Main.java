@@ -10,7 +10,8 @@ public class Main{
     shop.insertProductCons(13, "coca", 2.50, 5, false);
     shop.insertProductCons(14,"Bananes",0.90,10,true);
     shop.insertClient("Amaury","foo@bar.com");
-    shop.displayArticles();
-    shop.displayClients();
+    //shop.displayArticles();
+    //shop.displayClients();
+    shop.buy("foo@bar.com","Poudre à lessiver");
     }
 }

@@ -41,7 +41,24 @@ public class Magasin{
       System.out.println(key.getLibelle()+" prix: "+key.getPrix()+" stock:  "+key.getStock());
       }
     }
-    public void buy(){
-    System.out.println("buy");
+
+    public Client selectClient(String id){
+      return this.clientList.get(id);
+    }
+
+    public void selectProduit(String nomProduit){
+      int i=0;
+      Produit [] articles=this.articles.toArray(new Produit[this.articles.size()]);
+      while (i<articles.length && !articles[i].getLibelle().equals(nomProduit)) {
+        i++;
+        if (nomProduit.equals(articles[i].getLibelle())) {
+          System.out.println("Vous avez pris du "+articles[i].getLibelle());
+        }
+      }
+    }
+
+    public void buy(String id,String nomProduit){
+      Client currentClient=selectClient(id);
+      this.selectProduit(nomProduit);
     }
 }
