@@ -8,8 +8,8 @@ public class Magasin{
 
     private String nom;
     private double solde;
-    private clientList;
-    private articles;
+    private Hashtable <String,Client> clientList=new Hashtable <String,Client>();
+    private Hashtable <String, Produit> articles=new Hashtable <String,Produit>();
 
     public Magasin(){
 
