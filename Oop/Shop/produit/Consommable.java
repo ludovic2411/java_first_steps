@@ -2,7 +2,7 @@ package produit;
 
 import java.time.*;
 
-public class Consommable extends Produit{
+public class Consommable extends Produit implements Remboursable{
 
     private LocalDate datePeremption;
 
@@ -10,6 +10,10 @@ public class Consommable extends Produit{
         super(reference,libelle,prixUnitaire,stock);
         //date de péremption par défaut
         this.datePeremption=LocalDate.parse("2020-01-01");
+    }
+
+    public void discount(){
+      System.out.println("discount");
     }
 
 }
