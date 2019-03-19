@@ -2,16 +2,19 @@ package magasin;
 
 import client.*;
 import produit.*;
-import java.util.Hashtable;
+import java.util.*;
 
 public class Magasin{
 
     private String nom;
     private double solde;
-    private Hashtable <String,Client> clientList=new Hashtable <String,Client>();
-    private Hashtable <String, Produit> articles=new Hashtable <String,Produit>();
+    private Hashtable <String,Client> clientList;
+    private HashSet <Produit> articles;
 
     public Magasin(){
-
+      this.nom="Colruyt";
+      this.solde=100000.00;
+      this.clientList=new Hashtable <String,Client>();
+      this.articles=new HashSet();
     }
 }
