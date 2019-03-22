@@ -1,0 +1,8 @@
+INSERT INTO Sushi (id, name, price) 
+VALUES (2, 'Mackito', 50.0) 
+INSERT INTO Personne (id, prenom) 
+VALUES (1, 'Bob') 
+
+INSERT INTO Sushi (id, name, price) 
+VALUES (2, 'Mackito', 50.0) 
+
