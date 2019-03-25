@@ -6,9 +6,13 @@ public class Main{
     Example ex=new Example();
     try {
       Class c=ex.getClass();
+      System.out.println(c);
       Method meth=c.getMethod("hello");
-      Annotation ann=meth.getAnnotations(Annotation.class);
       System.out.println(meth);
+      Annotation ann=meth.getAnnotation(Annotation.class);
+      System.out.println(ann);
+      System.out.println(ann.i());
+      System.out.println(ann.str());
     } catch(Exception e) {
       System.out.println(e);
     }
